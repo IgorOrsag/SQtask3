@@ -8,10 +8,8 @@ package asciigradientgenerator;
 
 /**
  *
- * @author xorsag2
+ * @author admin
  */
-public class Canvas {
-    private int width;
-    private int height;
+public class AsciiSelector {
     
 }

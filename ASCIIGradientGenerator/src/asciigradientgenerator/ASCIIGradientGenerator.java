@@ -16,19 +16,24 @@ public class ASCIIGradientGenerator {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int xr = 20;
-        int yr = 20;
-        int width = 40;
-        int height = 40;
-        //char[] anArray = new char[9];
-        //anArray[1] = 
+        //TODO retrieve fileName 
+        //TODO retrieve commands
         
-        for(int i=1; i <= width; i++){
-            for(int j=1; j<=height; j++){
-                System.out.print("*");
-            }
-            System.out.println("");
-        }
+        int width = 40;
+        int height = 30;
+        
+        int centerx = 20;
+        int centery = 15;
+        int gradientRadius = 20;
+        char[] signs ={' ','.', ',',':',';','x','X','&','@'};
+        
+        
+        AsciiGrid asciiGrid = new AsciiGrid(width, height);
+        GradientRadial gr = new GradientRadial(centerx, centery, gradientRadius);
+        asciiGrid.fillGrid(gr);
+        //TODO export to stream(file, cmdline,...) - some stream interface
+        
+        
     }
     
 }

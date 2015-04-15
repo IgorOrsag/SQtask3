@@ -17,13 +17,14 @@ import static org.junit.Assert.*;
  *
  * @author xorsag2
  */
-public class CanvasTest {
+public class AsciiGridTest {
     
-    public CanvasTest() {
+    public AsciiGridTest() {
     }
     
     @BeforeClass
     public static void setUpClass() {
+        AsciiGrid canvas = new AsciiGrid(30, 40);
     }
     
     @AfterClass
@@ -39,9 +40,13 @@ public class CanvasTest {
     }
 
     @Test
-    public void testSomeMethod() {
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testHasWidth() {
+        
+    }
+    
+    @Test
+    public void testHasHeight() {
+        
     }
     
 }
