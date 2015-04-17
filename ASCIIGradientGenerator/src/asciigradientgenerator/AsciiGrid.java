@@ -22,18 +22,16 @@ public class AsciiGrid {
     
     public char[][] grid;
     
-    public char[][] fillGrid(GradientRadial gr){
-        char[][] canvasGrid = new char[height][width];
+    public void fillGrid(GradientRadial gr){        
         for(int y=0; y<height; y++){
             for(int x=0; x<width; x++){
                 double distance = gr.getDistanceFromCenter(x,y);
-                //char asciiChar = ColorManager.getASCII(distance)
-                canvasGrid[y][x]='*';
-                System.out.print(canvasGrid[y][x]);
+                char asciiSign = gr.selectSign(distance);
+                grid[y][x]=asciiSign;
+                System.out.print(grid[y][x]);
             }
             System.out.println("");
-        }
-    return canvasGrid;
+        }    
     }
     
 }

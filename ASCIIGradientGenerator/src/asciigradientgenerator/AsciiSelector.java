@@ -11,5 +11,16 @@ package asciigradientgenerator;
  * @author admin
  */
 public class AsciiSelector {
+   
+    
+    
+    public AsciiSelector(char[][] signs) {
+        
+        
+    }
+    
+    public char selectSign(double dist, double normb){
+        return 0;
+    }
     
 }
