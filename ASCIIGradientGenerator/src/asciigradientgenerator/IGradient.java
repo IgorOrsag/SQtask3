@@ -8,19 +8,11 @@ package asciigradientgenerator;
 
 /**
  *
- * @author admin
+ * @author orsag
  */
-public class AsciiSelector {
-   
+public interface IGradient {
     
+    public double getDistanceFromCenter(int x, int y);
     
-    public AsciiSelector(char[][] signs) {
-        
-        
-    }
-    
-    public char selectSign(double dist, double normb){
-        return 0;
-    }
-    
+    public char selectSign(double distance);
 }

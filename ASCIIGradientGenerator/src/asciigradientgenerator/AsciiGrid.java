@@ -22,12 +22,12 @@ public class AsciiGrid {
     
     public char[][] grid;
     
-    public void fillGrid(GradientRadial gr){        
+    public void fillGrid(IGradient gr){        
         for(int y=0; y<height; y++){
             for(int x=0; x<width; x++){
                 double distance = gr.getDistanceFromCenter(x,y);
                 char asciiSign = gr.selectSign(distance);
-                grid[y][x]=asciiSign;
+                grid[y][x] = asciiSign;
                 System.out.print(grid[y][x]);
             }
             System.out.println("");

@@ -8,9 +8,9 @@ package asciigradientgenerator;
 
 /**
  *
- * @author admin
+ * @author orsag
  */
-public class GradientRadial {
+public class GradientRadial implements IGradient{
 
     
     private int centerx;
@@ -25,6 +25,7 @@ public class GradientRadial {
         this.signs = signs;
     }
     
+    @Override
     public double getDistanceFromCenter(int x, int y){
         int dx = x - centerx;
         int dy = y - centery;
@@ -33,6 +34,7 @@ public class GradientRadial {
     }
     
             
+    @Override
     public char selectSign(double distance){
         int numberOfSigns = signs.length;
         if(distance > gradientRadius){
