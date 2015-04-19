@@ -6,6 +6,9 @@
 
 package asciigradientgenerator;
 
+import commands.CommandParser;
+import commands.FileLoader;
+
 /**
  *
  * @author xorsag2
@@ -49,11 +52,19 @@ public class ASCIIGradientGenerator {
         char[] signs ={' ',';','"','x','+','$'};
         **/
         
+        String[] cmdLines = FileLoader.loadFileToLines("src\\Files\\GradientTestCommands\\radial1.txt");
+        int[] gridProportions = CommandParser.parseGridProportions(cmdLines[0]);
+        AsciiGrid asciiGrid = new AsciiGrid(gridProportions[0], gridProportions[1]);
         
-        AsciiGrid asciiGrid = new AsciiGrid(width, height);
-        IGradient gr = new GradientRadial(centerx, centery, gradientRadius, signs);
+        String gradientType = CommandParser.parseGradientType(cmdLines[2]);
+        int[] gradientParams = CommandParser.parseGradientParams(cmdLines[2]);
+        char[] gradientSigns = CommandParser.parseGradientSigns(cmdLines[1]);
         
-        //TODO fix bug pravdepodobne zaokruholanie
+        //TODO builder
+        IGradient gr = GradientBuilder.build(gradientType, gradientParams, gradientSigns);
+        
+        //TODO fix bug pravdepodobne zaokruholanie, urobit podla javovych zdrojakov
+        
         //IGradient gr = new GradientLinear(startx, starty, endx, endy, signs);
         asciiGrid.fillGrid(gr);
         //TODO export to stream(file, cmdline,...) - some stream interface

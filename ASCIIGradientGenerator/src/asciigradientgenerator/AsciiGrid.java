@@ -17,10 +17,20 @@ public class AsciiGrid {
         this.height = height;
         this.grid = new char[height][width];
     }
+    
     private int width;
+    
     private int height;
     
     public char[][] grid;
+    
+    public int getWidth() {
+        return width;
+    }
+
+    public int getHeight() {
+        return height;
+    }
     
     public void fillGrid(IGradient gr){        
         for(int y=0; y<height; y++){

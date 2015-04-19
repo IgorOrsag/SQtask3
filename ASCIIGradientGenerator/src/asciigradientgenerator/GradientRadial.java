@@ -37,10 +37,16 @@ public class GradientRadial implements IGradient{
     @Override
     public char selectSign(double distance){
         int numberOfSigns = signs.length;
+        /**
         if(distance > gradientRadius){
             return signs[numberOfSigns - 1];
         }
         return signs[(int)(distance * (numberOfSigns - 1) / gradientRadius)];
+        * */
+        distance /= gradientRadius;
+        distance *= numberOfSigns;
+        return signs[Math.min((int) distance, numberOfSigns - 1)];
+        
     }
     
     
