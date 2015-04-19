@@ -113,14 +113,28 @@ public class AsciiGridTest {
     
     @Test
     public void testFillGridLinear() {
-        /**
-        System.out.println("fillGrid");
-        IGradient gr = null;
-        AsciiGrid instance = null;
-        instance.fillGrid(gr);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-        **/
+        String[] cmdLines = FileLoader.loadFileToLines("src\\Files\\GradientTestCommands\\linear1.txt");
+        
+        int[] gridProportions = CommandParser.parseGridProportions(cmdLines[0]);
+        AsciiGrid asciiGrid = new AsciiGrid(gridProportions[0], gridProportions[1]);
+        
+        String gradientType = CommandParser.parseGradientType(cmdLines[2]);
+        int[] gradientParams = CommandParser.parseGradientParams(cmdLines[2]);
+        char[] gradientSigns = CommandParser.parseGradientSigns(cmdLines[1]);
+        
+        //TODO builder
+        IGradient gr = GradientBuilder.build(gradientType, gradientParams, gradientSigns);                
+        asciiGrid.fillGrid(gr);
+        
+        String[] gradientImgLines = FileLoader.loadFileToLines("src\\Files\\GradientTestFiles\\linear1.txt");
+        //TODO separate test
+        assertEquals(gradientImgLines.length, asciiGrid.getHeight()); 
+        //TODO separate test
+        
+        for(int lineNumber = 0; lineNumber < asciiGrid.getHeight(); lineNumber++){
+            String asciiLine = new String(asciiGrid.grid[lineNumber]);
+            assertEquals(gradientImgLines[lineNumber], asciiLine);
+        }
     }
     
     

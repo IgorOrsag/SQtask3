@@ -35,7 +35,10 @@ public class AsciiGrid {
     public void fillGrid(IGradient gr){        
         for(int y=0; y<height; y++){
             for(int x=0; x<width; x++){
+                
                 double distance = gr.getDistanceFromCenter(x,y);
+                //System.out.println(distance);
+                //System.out.println();
                 char asciiSign = gr.selectSign(distance);
                 grid[y][x] = asciiSign;
                 System.out.print(grid[y][x]);

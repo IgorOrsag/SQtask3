@@ -20,26 +20,7 @@ public class ASCIIGradientGenerator {
      */
     public static void main(String[] args) {
         //TODO retrieve fileName 
-        //TODO retrieve commands
-        /**
-        int width = 40;
-        int height = 30;
-        
-        int centerx = 20;
-        int centery = 15;
-        int gradientRadius = 20;
-        char[] signs ={' ','.', ',',':',';','x','X','&','@'};
-        **/
-        
-        
-        int width = 40;
-        int height = 30;
-        
-        int centerx = 20;
-        int centery = 15;
-        int gradientRadius = 20;
-        char[] signs ={' ','.', ',',':',';','x','X','&','@'};
-        
+                
         /**
         int width = 60;
         int height = 30;
@@ -52,7 +33,7 @@ public class ASCIIGradientGenerator {
         char[] signs ={' ',';','"','x','+','$'};
         **/
         
-        String[] cmdLines = FileLoader.loadFileToLines("src\\Files\\GradientTestCommands\\radial1.txt");
+        String[] cmdLines = FileLoader.loadFileToLines("src\\Files\\GradientTestCommands\\linear1.txt");
         int[] gridProportions = CommandParser.parseGridProportions(cmdLines[0]);
         AsciiGrid asciiGrid = new AsciiGrid(gridProportions[0], gridProportions[1]);
         
