@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package FileLoader;
+package commands;
 
 import commands.FileLoader;
 import org.junit.After;
